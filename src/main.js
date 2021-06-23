@@ -16,10 +16,15 @@ let enemyCharacter = new Character("Blobby", 10, 10, 2, "Mean looks")
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#playerCharacterHeight").text(playerCharacter.height);
   $("#playerCharacterWeapon").text(playerCharacter.weapon);
-  console.log(playerCharacter.name)
+
+  $("#enemyCharacterName").text(enemyCharacter.name);
+  $("#enemyCharacterHealth").text(enemyCharacter.health);
+  $("#enemyCharacterHeight").text(enemyCharacter.height);
+  $("#enemyCharacterWeapon").text(enemyCharacter.weapon);
 
   $("#attack").click(function(){
     playerCharacter.subtractHealth();
     enemyCharacter.subtractHealthEnemy();
     $("#playerCharacterHealth").text(playerCharacter.health);
+    $("#enemyCharacterHealth").text(enemyCharacter.health);
   });

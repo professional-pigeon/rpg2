@@ -9,9 +9,10 @@ export default class Character {
   
   attackRoll () {
     let number = Math.ceil((Math.random() * 6))
-    if (this.weapon === "Dagger") {
-      return number+2;
-    }
+      return number
+    // if (this.weapon === "Dagger") {
+    //   return number+2;
+    // }
   }
   
   enemyRoll () {
