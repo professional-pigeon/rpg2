@@ -35,8 +35,3 @@ export default class Character {
   }
 
 }
-
-
-// let character - new Char
-// expect(character.name).toEqual("Hector");
-// this.name
