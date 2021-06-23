@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'RENAME PROJECT',
+      title: 'Test Repo 2',
       template: './src/index.html',
       inject: 'body'
     })
