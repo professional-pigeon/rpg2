@@ -45,6 +45,13 @@ describe('Character', () => {
       expect(character.height).toEqual(2);
       expect(character.maxHealth).toEqual(15);
     });
+
+    test("when you level up you're health resets to the max value", () => {
+      character.levelUp();
+      expect(character.height).toEqual(2);
+      expect(character.maxHealth).toEqual(15);
+      expect(character.health).toEqual(character.maxHealth);
+    });
   });
 
 

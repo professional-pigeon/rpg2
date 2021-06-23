@@ -31,6 +31,7 @@ export default class Character {
   levelUp () {
     this.height = this.height + 1;
     this.maxHealth = this.maxHealth + 5;
+    this.health = this.maxHealth;
   }
 
 }
