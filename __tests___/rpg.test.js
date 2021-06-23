@@ -5,7 +5,7 @@ describe('Character', () => {
   let character;
     
     beforeEach(() =>  {
-      character = new Character("Hector", 10, 10, 1, "dagger");
+      character = new Character("Hector", 10, 10, 1, "Dagger");
     });
 
     test('should create a character object',  () => {
@@ -13,7 +13,7 @@ describe('Character', () => {
       expect(character.maxHealth).toEqual(10);
       expect(character.health).toEqual(10);
       expect(character.height).toEqual(1);
-      expect(character.weapon).toEqual("dagger");
+      expect(character.weapon).toEqual("Dagger");
     });
 
     test('should generate attack value',  () => {
@@ -31,7 +31,7 @@ describe('Character', () => {
     });
     
     test("should lower your health as a result of a roll", () => {
-      const character = new Character("Hector", 10, 1, 1, "dagger");
+      const character = new Character("Hector", 10, 1, 1, "Dagger");
       expect(character.subtractHealth()).toEqual("dead");
     });
 
@@ -52,7 +52,14 @@ describe('Character', () => {
       expect(character.maxHealth).toEqual(15);
       expect(character.health).toEqual(character.maxHealth);
     });
+
+    test("should subtract attackRoll from health", () => {
+      character.subtractHealthEnemy();
+      expect(character.health).toBeLessThan(character.maxHealth)
+    })
+    
   });
+
 
 
 

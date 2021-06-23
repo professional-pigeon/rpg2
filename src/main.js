@@ -2,9 +2,24 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import Character from './rpg.js';
+
+let playerCharacter = new Character("Hector", 10, 10, 1, "Dagger") 
+let enemyCharacter = new Character("Blobby", 10, 10, 2, "Mean looks")
+
+// When enemy health reaches <= 0, this will be part of the if statment
+// playerCharacter.levelUp();
 
 
 
-$(document).ready(function() {
-  
-});
+  $("#playerCharacterName").text(playerCharacter.name);
+  $("#playerCharacterHealth").text(playerCharacter.health);
+  $("#playerCharacterHeight").text(playerCharacter.height);
+  $("#playerCharacterWeapon").text(playerCharacter.weapon);
+  console.log(playerCharacter.name)
+
+  $("#attack").click(function(){
+    playerCharacter.subtractHealth();
+    enemyCharacter.subtractHealthEnemy();
+    $("#playerCharacterHealth").text(playerCharacter.health);
+  });

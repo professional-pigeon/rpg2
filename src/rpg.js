@@ -9,10 +9,10 @@ export default class Character {
   
   attackRoll () {
     let number = Math.ceil((Math.random() * 6))
-    if (this.weapon = "dagger") {
+    if (this.weapon === "Dagger") {
       return number+2;
-    };
-  };
+    }
+  }
   
   enemyRoll () {
     let number = Math.ceil((Math.random() * 2))
@@ -21,6 +21,15 @@ export default class Character {
 
   subtractHealth () {
     this.health = this.health - this.enemyRoll();
+    if (this.health <= 0) {
+      return "dead"
+    } else {
+      return this.health
+  }
+  }
+
+  subtractHealthEnemy () {
+    this.health = this.health - this.attackRoll();
     if (this.health <= 0) {
       return "dead"
     } else {

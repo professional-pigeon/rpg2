@@ -40,7 +40,7 @@ Level system: Getting taller
 
 Battle System: Roll dice to deal damage and lets players have another option of attack or defending
 
-User Interface: Users see HP, HP of monsters, button to attack, after fights players get to choose left or right path.
+User Interface: Users see HP, HP of monsters, button to attack, after fights players get to choose left or right path. 
 
 Gameplay: 
 
