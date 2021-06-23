@@ -7,8 +7,13 @@ export default class Character {
   }
   
   attackRoll () {
-    return Math.ceil((Math.random() * 6));
-};
+    let number = Math.ceil((Math.random() * 6))
+    if (this.weapon = "dagger") {
+      return number+2;
+    };
+  };
+
+
 }
 // let character - new Char
 // expect(character.name).toEqual("Hector");

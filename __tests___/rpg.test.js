@@ -17,8 +17,8 @@ describe('Character', () => {
 
     test('should create a character object',  () => {
       expect(character.attackRoll()).toBeGreaterThanOrEqual(1);
-      expect(character.attackRoll()).toBeLessThanOrEqual(6);
+      expect(character.attackRoll()).toBeLessThanOrEqual(8);
     });
 
-
+p
   });
