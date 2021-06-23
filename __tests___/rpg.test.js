@@ -15,10 +15,23 @@ describe('Character', () => {
       expect(character.weapon).toEqual("dagger");
     });
 
-    test('should create a character object',  () => {
+    test('should generate attack value',  () => {
       expect(character.attackRoll()).toBeGreaterThanOrEqual(1);
       expect(character.attackRoll()).toBeLessThanOrEqual(8);
     });
 
-p
-  });
+    test('should generate enemy attack value',  () => {
+      expect(character.enemyRoll()).toBeGreaterThanOrEqual(1);
+      expect(character.enemyRoll()).toBeLessThanOrEqual(2);
+    });
+
+    test("should lower your health as a result of a roll", () => {
+      expect(character.subtractHealth()).toBeLessThan(10);
+    });
+    
+    test("should lower your health as a result of a roll", () => {
+      const character = new Character("Hector", 1, 1, "dagger");
+      expect(character.subtractHealth()).toEqual("dead");
+    });
+
+});
