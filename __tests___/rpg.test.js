@@ -5,11 +5,12 @@ describe('Character', () => {
   let character;
     
     beforeEach(() =>  {
-      character = new Character("Hector", 10, 1, "dagger");
+      character = new Character("Hector", 10, 10, 1, "dagger");
     });
 
     test('should create a character object',  () => {
       expect(character.name).toEqual("Hector");
+      expect(character.maxHealth).toEqual(10);
       expect(character.health).toEqual(10);
       expect(character.height).toEqual(1);
       expect(character.weapon).toEqual("dagger");
@@ -26,12 +27,26 @@ describe('Character', () => {
     });
 
     test("should lower your health as a result of a roll", () => {
-      expect(character.subtractHealth()).toBeLessThan(10);
+      expect(character.subtractHealth()).toBeLessThan(character.maxHealth);
     });
     
     test("should lower your health as a result of a roll", () => {
-      const character = new Character("Hector", 1, 1, "dagger");
+      const character = new Character("Hector", 10, 1, 1, "dagger");
       expect(character.subtractHealth()).toEqual("dead");
     });
 
-});
+    test("when you level up you get taller", () => {
+      character.levelUp();
+      expect(character.height).toEqual(2);
+    });
+
+    test("when you level up you get more maxHealth", () => {
+      character.levelUp();
+      expect(character.height).toEqual(2);
+      expect(character.maxHealth).toEqual(15);
+    });
+  });
+
+
+
+

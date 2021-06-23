@@ -1,6 +1,7 @@
 export default class Character {
-  constructor(name, health, inches, weapon) {
+  constructor(name, maxHealth, health, inches, weapon) {
       this.name = name;
+      this.maxHealth = maxHealth;
       this.health = health;
       this.height = inches;
       this.weapon = weapon;
@@ -25,9 +26,16 @@ export default class Character {
     } else {
       return this.health
   }
-}
+  }
+
+  levelUp () {
+    this.height = this.height + 1;
+    this.maxHealth = this.maxHealth + 5;
+  }
 
 }
+
+
 // let character - new Char
 // expect(character.name).toEqual("Hector");
 // this.name
