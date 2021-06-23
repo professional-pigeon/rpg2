@@ -14,4 +14,11 @@ describe('Character', () => {
       expect(character.height).toEqual(1);
       expect(character.weapon).toEqual("dagger");
     });
+
+    test('should create a character object',  () => {
+      expect(character.attackRoll()).toBeGreaterThanOrEqual(1);
+      expect(character.attackRoll()).toBeLessThanOrEqual(6);
+    });
+
+
   });
