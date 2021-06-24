@@ -23,8 +23,8 @@ let enemyCharacter = new Character("Blobby", 10, 10, 2, "Mean looks")
   $("#enemyCharacterWeapon").text(enemyCharacter.weapon);
 
   $("#attack").click(function(){
-    playerCharacter.subtractHealth();
-    enemyCharacter.subtractHealthEnemy();
+    enemyCharacter.subtractHealth(playerCharacter.attackRoll());
+    playerCharacter.subtractHealth(enemyCharacter.enemyRoll());
     $("#playerCharacterHealth").text(playerCharacter.health);
     $("#enemyCharacterHealth").text(enemyCharacter.health);
   });

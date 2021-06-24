@@ -18,7 +18,7 @@ describe('Character', () => {
 
     test('should generate attack value',  () => {
       expect(character.attackRoll()).toBeGreaterThanOrEqual(1);
-      expect(character.attackRoll()).toBeLessThanOrEqual(8);
+      expect(character.attackRoll()).toBeLessThanOrEqual(6);
     });
 
     test('should generate enemy attack value',  () => {
@@ -27,12 +27,14 @@ describe('Character', () => {
     });
 
     test("should lower your health as a result of a roll", () => {
-      expect(character.subtractHealth()).toBeLessThan(character.maxHealth);
+      let number = 2;
+      expect(character.subtractHealth(number)).toBeLessThan(character.maxHealth);
     });
     
     test("should lower your health as a result of a roll", () => {
+      let number = 2;
       const character = new Character("Hector", 10, 1, 1, "Dagger");
-      expect(character.subtractHealth()).toEqual("dead");
+      expect(character.subtractHealth(number)).toEqual("dead");
     });
 
     test("when you level up you get taller", () => {
@@ -54,9 +56,12 @@ describe('Character', () => {
     });
 
     test("should subtract attackRoll from health", () => {
-      character.subtractHealthEnemy();
+      let number = 2;
+      character.subtractHealthEnemy(number);
       expect(character.health).toBeLessThan(character.maxHealth)
-    })
+    });
+
+   
     
   });
 
