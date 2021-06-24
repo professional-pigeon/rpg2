@@ -4,3 +4,6 @@ body {
 #moveon {
   display: none;
 }
+#dead {
+  display: none;
+}

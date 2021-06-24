@@ -35,7 +35,8 @@ export default class Character {
   subtractHealth (number) {
     this.health = this.health - number;
     if (this.health <= 0) {
-      return "dead"
+      this.health = "dead"
+      return this.health
     } else {
       return this.health
   }

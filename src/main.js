@@ -27,13 +27,25 @@ $("#attack").click(function(){
   playerCharacter.subtractHealth(enemyCharacter.enemyRoll());
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#enemyCharacterHealth").text(enemyCharacter.health);
+  if (playerCharacter.health <= 0) {
+    $("#dead").show();
+    $("#attack").hide();
+  }else if (enemyCharacter.health === "dead") {
+    $("#moveon").show();
+    $("#attack").hide();
+  }
 });
 
 $('#moveon').click(function(){
   playerCharacter.levelUp();
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#playerCharacterHeight").text(playerCharacter.height);
-  console.log(playerCharacter.health)
-  console.log(playerCharacter.height)
-
+  $("#attack").show();
+  $("#moveon").hide();
+  enemyCharacter.name = "bloberta"
+  enemyCharacter.health = 20;
+  enemyCharacter.height = 4;
+  enemyCharacter.weapon = ruler;
+  $("#enemyCharacterHealth").text(enemyCharacter.health);
+  $("#enemyCharacterName").text(enemyCharacter.name);
 });
