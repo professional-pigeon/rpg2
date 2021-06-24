@@ -27,7 +27,7 @@ $("#attack").click(function(){
   playerCharacter.subtractHealth(enemyCharacter.enemyRoll());
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#enemyCharacterHealth").text(enemyCharacter.health);
-  if (playerCharacter.health <= 0) {
+  if (playerCharacter.health === "dead") {
     $("#dead").show();
     $("#attack").hide();
   }else if (enemyCharacter.health === "dead") {
