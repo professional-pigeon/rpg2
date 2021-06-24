@@ -60,3 +60,32 @@ export default class Character {
   }
 
 }
+
+
+
+
+// Whiteboarding:
+
+// split() sort() to lower case 
+
+// letterArray[A-Z] letter[0-25]
+
+// let testString = "Thank you, for taking the time to do this interview."
+
+// let lowerCaseString = testString.toLowerCase();
+// let splitString = lowerCaseString.split("");
+// let sortedString = splitString.sort();
+
+// let letterArray = [];
+// let alphabetArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+// let numberOfOccurences = 0;
+
+// alphabetArray.forEach(function(letter){
+//   for  (let i = 0; i < sortedString.length; i ++)
+//     if (letter === sortedString[i]) {
+//       numberOfOccurences ++;
+//     } else {
+//     }
+//     letterArray.push(numberOfOccurences);
+//     numberOfOccurences = 0;
+// })
