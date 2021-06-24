@@ -12,19 +12,28 @@ let enemyCharacter = new Character("Blobby", 10, 10, 2, "Mean looks")
 
 
 
-  $("#playerCharacterName").text(playerCharacter.name);
+$("#playerCharacterName").text(playerCharacter.name);
+$("#playerCharacterHealth").text(playerCharacter.health);
+$("#playerCharacterHeight").text(playerCharacter.height);
+$("#playerCharacterWeapon").text(playerCharacter.weapon);
+
+$("#enemyCharacterName").text(enemyCharacter.name);
+$("#enemyCharacterHealth").text(enemyCharacter.health);
+$("#enemyCharacterHeight").text(enemyCharacter.height);
+$("#enemyCharacterWeapon").text(enemyCharacter.weapon);
+
+$("#attack").click(function(){
+  enemyCharacter.subtractHealth(playerCharacter.attackRoll());
+  playerCharacter.subtractHealth(enemyCharacter.enemyRoll());
+  $("#playerCharacterHealth").text(playerCharacter.health);
+  $("#enemyCharacterHealth").text(enemyCharacter.health);
+});
+
+$('#moveon').click(function(){
+  playerCharacter.levelUp();
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#playerCharacterHeight").text(playerCharacter.height);
-  $("#playerCharacterWeapon").text(playerCharacter.weapon);
+  console.log(playerCharacter.health)
+  console.log(playerCharacter.height)
 
-  $("#enemyCharacterName").text(enemyCharacter.name);
-  $("#enemyCharacterHealth").text(enemyCharacter.health);
-  $("#enemyCharacterHeight").text(enemyCharacter.height);
-  $("#enemyCharacterWeapon").text(enemyCharacter.weapon);
-
-  $("#attack").click(function(){
-    enemyCharacter.subtractHealth(playerCharacter.attackRoll());
-    playerCharacter.subtractHealth(enemyCharacter.enemyRoll());
-    $("#playerCharacterHealth").text(playerCharacter.health);
-    $("#enemyCharacterHealth").text(enemyCharacter.health);
-  });
+});
