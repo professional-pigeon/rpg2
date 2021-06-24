@@ -7,3 +7,15 @@ body {
 #dead {
   display: none;
 }
+#winner {
+  display: none;
+}
+#moveon2 {
+  display: none;
+}
+#attack2 {
+  display: none;
+}
+#attack3 {
+  display: none;
+}

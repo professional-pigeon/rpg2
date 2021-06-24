@@ -6,6 +6,8 @@ import Character from './rpg.js';
 
 let playerCharacter = new Character("Hector", 10, 10, 1, "Dagger") 
 let enemyCharacter = new Character("Blobby", 10, 10, 2, "Mean looks")
+let bloberta = new Character("Bloberta", 20, 20, 3, "Eye rolls")
+let blobbySr = new Character("Blobby Sr.", 30, 30, 12, "Yard stick")
 
 // When enemy health reaches <= 0, this will be part of the if statment
 // playerCharacter.levelUp();
@@ -40,12 +42,50 @@ $('#moveon').click(function(){
   playerCharacter.levelUp();
   $("#playerCharacterHealth").text(playerCharacter.health);
   $("#playerCharacterHeight").text(playerCharacter.height);
-  $("#attack").show();
+  $("#attack2").show();
   $("#moveon").hide();
-  enemyCharacter.name = "bloberta"
-  enemyCharacter.health = 20;
-  enemyCharacter.height = 4;
-  enemyCharacter.weapon = ruler;
-  $("#enemyCharacterHealth").text(enemyCharacter.health);
-  $("#enemyCharacterName").text(enemyCharacter.name);
+  $("#enemyCharacterHealth").text(bloberta.health);
+  $("#enemyCharacterName").text(bloberta.name);
+  $("#enemyCharacterHeight").text(bloberta.height);
+  $("#enemyCharacterWeapon").text(bloberta.weapon);
+});
+
+$("#attack2").click(function(){
+  bloberta.subtractHealth(playerCharacter.attackRoll());
+  playerCharacter.subtractHealth(bloberta.enemyRoll());
+  $("#playerCharacterHealth").text(playerCharacter.health);
+  $("#enemyCharacterHealth").text(bloberta.health);
+  if (playerCharacter.health === "dead") {
+    $("#dead").show();
+    $("#attack2").hide();
+  }else if (bloberta.health === "dead") {
+    $("#moveon2").show();
+    $("#attack2").hide();
+  }
+});
+
+$('#moveon2').click(function(){
+  playerCharacter.levelUp();
+  $("#playerCharacterHealth").text(playerCharacter.health);
+  $("#playerCharacterHeight").text(playerCharacter.height);
+  $("#attack3").show();
+  $("#moveon2").hide();
+  $("#enemyCharacterHealth").text(blobbySr.health);
+  $("#enemyCharacterName").text(blobbySr.name);
+  $("#enemyCharacterHeight").text(blobbySr.height);
+  $("#enemyCharacterWeapon").text(blobbySr.weapon);
+});
+
+$("#attack3").click(function(){
+  blobbySr.subtractHealth(playerCharacter.attackRoll());
+  playerCharacter.subtractHealth(blobbySr.enemyRoll());
+  $("#playerCharacterHealth").text(playerCharacter.health);
+  $("#enemyCharacterHealth").text(blobbySr.health);
+  if (playerCharacter.health === "dead") {
+    $("#dead").show();
+    $("#attack2").hide();
+  }else if (blobbySr.health === "dead") {
+    $("#winner").show();
+    $("#attack3").hide();
+  }
 });
