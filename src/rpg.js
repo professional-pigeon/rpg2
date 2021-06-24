@@ -1,3 +1,5 @@
+import { support } from "jquery";
+
 export default class Character {
   constructor(name, maxHealth, health, inches, weapon) {
     this.name = name;
@@ -58,17 +60,3 @@ export default class Character {
   }
 
 }
-
-// export class Enemy {
-//   constructor(name, maxHealth, health, inches, weapon) {
-//       this.name = name;
-//       this.maxHealth = maxHealth;
-//       this.health = health;
-//       this.height = inches;
-//       this.weapon = weapon;
-      // this.strength = strength;
-
-
-
-      
-  
